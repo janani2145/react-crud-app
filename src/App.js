@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Table from './components/Table/Table'
+import Form from './components/Form/Form'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-function App() {
+
+
+ const App = () => {
+    const [users,setUsers]=useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+           <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Form setUsers={setUsers}/>} />
+      <Route path="/table" element={<Table users={users}/>} />
+    </Routes>
+    </BrowserRouter>
     </div>
-  );
+  )
 }
 
 export default App;
