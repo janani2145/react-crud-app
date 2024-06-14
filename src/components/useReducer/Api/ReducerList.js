@@ -27,10 +27,15 @@ try{
 const handleEdit=(id)=>{
   nav(`/reducer/edit/${id}`)
 }
+const back=()=>{
+    nav("/reducerform");
+}
     return (
-        <div className="container mt-5">
+        <div className="container mt-3">
             <div className="row justify-content-center">
                 <div className="col-md-12">
+                    <h1 className='text-center'>Student Details</h1>
+                    <button className='btn btn-dark my-2' onClick={back}>Back</button>
                     <table className='table table-striped table-responsive text-center'>
                         <thead>
                             <tr>
@@ -65,7 +70,7 @@ const handleEdit=(id)=>{
                                     <td>{user.address}</td>
                                     <td>{user.zip}</td>
                                     <td>
-                                        <button className="btn btn-primary" onClick={()=>handleEdit(user.id)}>Edit</button>
+                                        <button className="btn btn-secondary" onClick={()=>handleEdit(user.id)}>Edit</button>
                                         <button className="ms-2 btn btn-danger" onClick={()=>handleDelete(user.id)}>Delete</button>
                                     </td>
                                 </tr>

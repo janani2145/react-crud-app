@@ -2,6 +2,7 @@ import { DELETE_USER, FETCH_ID_USER, FETCH_USER, POST_USER, UPDATE_USER } from "
 
 export const initialState= {
     users:[],
+  
 
 }
 export const reducer=(state,action)=>{
@@ -26,8 +27,9 @@ case DELETE_USER:
 case UPDATE_USER:
     return{
         ...state,
-         users:  state.users.map((user)=>user.id ===action.payload.id?action.payload : user),
+         users:  state.users.map((user)=>user.id === action.payload.id? action.payload : user),
     }
-    default : return state;
+    default :
+     return state;
 }
 }

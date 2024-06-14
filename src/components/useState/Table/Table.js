@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { deleteUser, fetchUsers } from '../../Services/mockApis';
-
+import { deleteUser, fetchUsers } from '../Services/mockApis';
 
 
 export const Table = () => {
@@ -16,7 +15,7 @@ export const Table = () => {
         .catch ((error)=> {
             console.error('Error fetching users:', error)
         });
-},[]);
+}, []);
 
   const deleteData = async (id) => {
     try {
@@ -35,7 +34,7 @@ export const Table = () => {
 <>
 <div className="container">
 <div> 
-<button className="btn btn-secondary mt-5" onClick={()=>{nav("/form")}}>Back</button>
+<button className="btn btn-secondary mt-5" onClick={()=>{nav("/")}}>Back</button>
 </div>
 <h1 className='text-center text-white'>User Details</h1>
       <table className="table table-responsive table-striped text-bg-dark col-md-12 mt-3">
@@ -56,8 +55,8 @@ export const Table = () => {
               <td >{user.email}</td>
               <td >{user.password}</td>
               <td >
-                <button className='btn btn-secondary' onClick={() => editData(user.id)}>Edit</button>
-                <button className='btn btn-danger ms-2' onClick={() => deleteData(user.id)}>Delete</button>
+                <button className='btn btn-secondary ' onClick={() => editData(user.id)}>Edit</button>
+                <button className='btn btn-danger ms-2 ' onClick={() => deleteData(user.id)}>Delete</button>
               </td>
             </tr>
           ))}

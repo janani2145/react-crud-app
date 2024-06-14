@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate, useParams } from 'react-router-dom';
-import Spinner from '../Spinner/Spinner';
+
 
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { fetchUserById, updateUser } from '../../Services/mockApis';
+import Spinner from '../../Spinner/Spinner';
 
 const Edit = () => {
     const [spinner, setSpinner] = useState(false);
@@ -57,9 +58,9 @@ const Edit = () => {
 
     return (
         <>
-            {spinner && <Spinner />}
+            {spinner && <Spinner/>}
             <div className="container mt-5 pt-3 d-flex justify-content-center text-white">
-                <form onSubmit={formik.handleSubmit} className='form p-5 rounded-5 formBg'>
+                <form onSubmit={formik.handleSubmit} className='form p-5 rounded-5 formBg shadow'>
                     <h1 className='text-center'>Edit</h1>
                     <div className="mb-3">
                         <label htmlFor="name" className="form-label">Name:</label>

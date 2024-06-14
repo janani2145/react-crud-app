@@ -1,10 +1,13 @@
 import { useState } from 'react';
-
 import { useNavigate } from 'react-router-dom';
-import Spinner from '../Spinner/Spinner';
+
 import { useFormik } from 'formik';
 import * as Yup from "yup";
 import { postUser } from '../../Services/mockApis';
+import Spinner from '../../Spinner/Spinner';
+
+
+
 
 const Form = () => {
     const [spinner, setSpinner] = useState(false);
@@ -41,12 +44,12 @@ const Form = () => {
 
     return (
         <>
-            {spinner && <Spinner />}
+            {spinner && <Spinner/>}
             <div className="container mt-5 pt-4 text-white d-flex justify-content-center">
-                <form onSubmit={formik.handleSubmit} className='form p-5 rounded-5 formBg'>
-                    <h1 className='text-center'>Login</h1>
+                <form onSubmit={formik.handleSubmit} className='form p-5 rounded-5  shadow'>
+                    <h1 className='text-center text-dark'>Login</h1>
                  
-                    <div className="mb-3">
+                    <div>
                         <label htmlFor="name" className="form-label">Name:</label>
                         <input
                             type="text"
@@ -64,7 +67,7 @@ const Form = () => {
                         ) : null}
                         
                     </div>
-                    <div className="mb-3">
+                    <div>
                         <label htmlFor="email" className="form-label">Email:</label>
                         <input
                             type="email"
@@ -82,7 +85,7 @@ const Form = () => {
                         ) : null}
                       
                     </div>
-                    <div className="mb-3">
+                    <div className="">
                         <label htmlFor="password" className="form-label">Password:</label>
                         <input
                             type="password"
@@ -100,9 +103,7 @@ const Form = () => {
                         ) : null}
                         
                     </div>
-                    <div className='d-flex justify-content-center align-items-center'>
-                        <button type="submit" className="btn btn-info">Submit</button>
-                    </div>
+                        <button type="submit" className="btn btn-success w-100 mt-4">Submit</button>
                 </form>
             </div> 
 

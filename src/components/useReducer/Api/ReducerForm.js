@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import { useReducer } from 'react';
 import { initialState, reducer } from './Reducer';
 import { postUser } from '../../Services/mockApis';
 import { postSuccess } from './Action';
 import { useNavigate } from 'react-router-dom';
+import Spinner from '../../Spinner/Spinner';
+
+
 export const ReducerForm = () => {
   const [state,dispatch]= useReducer(reducer,initialState);
   const [fname, setFname] = useState('');
@@ -19,25 +21,49 @@ export const ReducerForm = () => {
   const [studentId, setStudentId] = useState('');
   const [address, setAddress] = useState('');
   const [zip, setZip] = useState('');
-const nav= useNavigate()
+  const nav= useNavigate();
+  const [spinner,setSpinner]=useState(false);
+
+
+
+const handleReset = () => {
+  setFname('');
+  setLname('');
+  setDob('');
+  setNation('');
+  setGender('');
+  setDepartment('');
+  setEmail('');
+  setPhone('');
+  setStudentId('');
+  setAddress('');
+  setZip('');
+};
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(fname && lname && dob && nation && gender && studentId && department && phone &&  email && address && zip !== "" ){
+      setSpinner(true);
     try {
         const response = await postUser({fname,lname,dob,nation,gender,studentId,department,phone,email,address,zip});
         dispatch(postSuccess(response));
         nav("/reducertable");
+        setSpinner(false);
+        handleReset();
     } catch (error) {
         console.error('Error creating the user!', error);
-    }
+        setSpinner(false)
+    }}
 };
+
 
 
   return (
     <>
+    {spinner && <Spinner/>}
     <div className="container mt-5">
         <div className='d-flex justify-content-center align-items-center'>
-          <form className="form w-50 p-4 border rounded bg-white" onSubmit={handleSubmit}>
+          <form className="form w-50 p-4 border rounded bg-white shadow" onSubmit={handleSubmit}>
             <h2>Student Registration</h2>
             <h6>Personal Information</h6>
             <div className='row'>
@@ -195,8 +221,8 @@ const nav= useNavigate()
               </div>
             </div>
             <div className='d-flex justify-content-end'>
-              <button type="button" className="btn btn-danger mt-3" >Reset</button>
-              <button type="submit" className="btn btn-primary ms-3 mt-3">Submit</button>
+              <button type="button" className="btn btn-success mt-3" onClick={handleReset}>Reset</button>
+              <button type="submit" className="btn btn-success ms-3 mt-3">Submit</button>
             </div>
           </form>
         </div>

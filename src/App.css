@@ -1,16 +1,60 @@
-.formBg{
+/* .formBg{
   background: #2c3E50;
 background: -webkit-linear-gradient(to right,#2c3E50 , #000000); 
 background: linear-gradient(to right, #2c3E50,#000000 ); 
 
-}
-body{
-  background: #485563;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #29323c, #485563);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #29323c, #485563); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+} */
+/* body{
+  background: #485563;
+background: -webkit-linear-gradient(to right, #29323c, #485563); 
+background: linear-gradient(to right, #29323c, #485563); 
 
-}
-.form{
-  box-shadow: inset 2px -4px 4px #6d676771;
+} */
+/* .form{
+  box-shadow: inset 1px -4px 4px #6d676771;
+} */
+
+/* .Header {
+  z-index: 200px;
+} */
+ .Navbar{
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)
+ }
+
+/* body{
+  background-image: url(../public/Assets/image/bg4.jpg); 
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+
+} */
+
+/* .body-bg{
+  background-color: rgb(136, 171, 171);
+  
+} */
+.crud{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family:cursive;
+  min-height:70vh;
+
+ 
 }
 
+
+
+ /* .input-field-show{
+  position: relative;
+} */
+/* nav{
+  font-family: 'Roboto Condensed', sans-serif;
+
+    background-color: #292731;
+   
+} */
+
+/* .logo{
+  font-family: 'Acme', sans-serif;
+} */
