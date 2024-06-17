@@ -28,6 +28,9 @@ background: linear-gradient(to right, #29323c, #485563);
  
 
 } */
+ body{
+  font-family: "Poppins", sans-seri;
+ }
 
 /* .body-bg{
   background-color: rgb(136, 171, 171);
@@ -37,10 +40,8 @@ background: linear-gradient(to right, #29323c, #485563);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family:cursive;
+  font-family: "Poppins", sans-seri;
   min-height:70vh;
-
- 
 }
 
 

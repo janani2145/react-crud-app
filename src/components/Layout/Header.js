@@ -20,6 +20,9 @@ const Header = () => {
               <NavDropdown.Item as={NavLink} to="/form" className='text-decoration-none'>
                 UseFormic
               </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/stateform" className='text-decoration-none'>
+                UseState
+              </NavDropdown.Item>
               <NavDropdown.Item as={NavLink} to="/reducerform" className='text-decoration-none'>
                 UseReducer
               </NavDropdown.Item>
