@@ -4,8 +4,9 @@ import { useReducer } from 'react';
 import { initialState, reducer } from './Reducer';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchUserById, updateUser } from '../../Services/mockApis';
-import { fetchIdSuccess, updateSuccess } from './Action';
+
 import Spinner from '../../Spinner/Spinner';
+import { fetchIdSuccess, updateSuccess } from './Action';
 
 const ReducerEdit = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -63,6 +64,7 @@ const ReducerEdit = () => {
         console.error('Error fetching user:', error);
       }
     };
+    
     getItem();
   }, [id]);
 

@@ -8,6 +8,7 @@ export const postSuccess = (data)=>{
 };
 }
 export const fetchSuccess = (data)=>{
+    console.log(data);
     return{
     type : FETCH_USER,
     payload: data

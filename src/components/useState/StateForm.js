@@ -21,7 +21,7 @@ const StateForm = () => {
         try {
             const response = await postUser(newUser); 
             setUsers([...users, response]);
-            nav('/table');
+            nav('/state/table');
             setName("");
             setEmail("")
             setPassword("")

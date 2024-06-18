@@ -61,8 +61,8 @@ const Edit = () => {
             {spinner && <Spinner/>}
             <div className="container mt-5 pt-3 d-flex justify-content-center text-white">
                 <form onSubmit={formik.handleSubmit} className='form p-5 rounded-5 formBg shadow'>
-                    <h1 className='text-center'>Edit</h1>
-                    <div className="mb-3">
+                    <h1 className='text-center text-dark'>Edit</h1>
+                    <div className="">
                         <label htmlFor="name" className="form-label">Name:</label>
                         <input
                             type="text"
@@ -77,7 +77,7 @@ const Edit = () => {
                             <div className="text-danger">{formik.errors.name}</div>
                         ) : null}
                     </div>
-                    <div className="mb-3">
+                    <div className="">
                         <label htmlFor="email" className="form-label">Email:</label>
                         <input
                             type="email"
@@ -92,7 +92,7 @@ const Edit = () => {
                             <div className="text-danger">{formik.errors.email}</div>
                         ) : null}
                     </div>
-                    <div className="mb-3">
+                    <div className="">
                         <label htmlFor="password" className="form-label">Password:</label>
                         <input
                             type="password"
@@ -107,9 +107,9 @@ const Edit = () => {
                             <div className="text-danger">{formik.errors.password}</div>
                         ) : null}
                     </div>
-                    <div className='d-flex justify-content-center align-items-center'>
-                        <button type="submit" className="btn btn-info">Update</button>
-                    </div>
+                  
+                        <button type="submit" className="btn btn-success w-100 mt-4">Update</button>
+                    
                 </form>
             </div>
         </>

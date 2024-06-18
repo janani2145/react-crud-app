@@ -34,10 +34,10 @@ export const StateTable = () => {
 <>
 <div className="container">
 <div> 
-<button className="btn btn-secondary mt-5" onClick={()=>{nav("/stateform")}}>Back</button>
+<button className="btn btn-secondary " onClick={()=>{nav("/stateform")}}>Back</button>
 </div>
-<h1 className='text-center text-white'>User Details</h1>
-      <table className="table table-responsive table-striped text-bg-dark col-md-12 mt-3">
+<h1 className='text-center text-dark'>User Details</h1>
+      <table className="table table-responsive table-striped text-bg-dark col-md-12">
         <thead >
           <tr>
             <th className='text-bg-secondary text-center'>SI.No</th>

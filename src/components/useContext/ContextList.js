@@ -1,14 +1,14 @@
 
 import React, { useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import { deleteUser, fetchUsers } from '../../Services/mockApis';
 import { deleteSuccess, fetchSuccess } from './Action';
 import { useNavigate } from 'react-router-dom';
-import { useUserContext } from './UserContext';
+import { useUserContext } from './Context';
+import { deleteUser, fetchUsers } from '../Services/mockApis';
+
 
 const ContextList = () => {
-    const { state, dispatch } = useUserContext();
+    const { state,dispatch } = useUserContext();
     const nav=useNavigate();
     useEffect(() => {
         const getUsers = async () => {
@@ -16,7 +16,7 @@ const ContextList = () => {
             dispatch(fetchSuccess(response));
         };
         getUsers();
-    }, []);
+    }, [dispatch]);
 
 const handleDelete=async(id)=>{
 try{
@@ -27,11 +27,12 @@ try{
   }
 }
 const handleEdit=(id)=>{
-  nav(`/reducer/edit/${id}`)
+  nav(`/context/edit/${id}`)
+
 }
 const back=()=>{
-    nav("/reducerform");
-}
+    nav("/contextform");
+} 
     return (
         <div className="container mt-3">
             <div className="row justify-content-center">
@@ -57,7 +58,7 @@ const back=()=>{
                             </tr>
                         </thead>
                         <tbody>
-                            {state.users.map((user, index) => (
+                        {state.users.map((user, index) => (
                                 <tr key={user.id}>
                                     <td>{index + 1}</td>
                                     <td>{user.fname}</td>
@@ -77,6 +78,7 @@ const back=()=>{
                                     </td>
                                 </tr>
                             ))}
+                          
                         </tbody>
                     </table>
                 </div>

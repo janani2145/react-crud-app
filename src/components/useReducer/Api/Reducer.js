@@ -17,7 +17,7 @@ case FETCH_USER:
     }
 case FETCH_ID_USER:
     return{
-        ...state, users:action.payload
+        ...state, users:[action.payload]
     }
 case DELETE_USER:
     return{

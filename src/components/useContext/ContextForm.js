@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useUserContext } from './UserContext';
-import { postUser } from '../../Services/mockApis';
+
 import { postSuccess } from './Action';
 import { useNavigate } from 'react-router-dom';
-import Spinner from '../../Spinner/Spinner';
+import { postUser } from '../Services/mockApis';
+import Spinner from '../Spinner/Spinner';
+import { useUserContext } from './Context';
 
 
-export const COntextForm = () => {
-    const { dispatch } = useUserContext();
+
+export const ContextForm = () => {
+  const {state,dispatch } = useUserContext();
   const [fname, setFname] = useState('');
   const [lname, setLname] = useState('');
   const [dob, setDob] = useState('');
@@ -46,7 +48,7 @@ const handleReset = () => {
     try {
         const response = await postUser({fname,lname,dob,nation,gender,studentId,department,phone,email,address,zip});
         dispatch(postSuccess(response));
-        nav("/reducertable");
+        nav("/context/table");
         setSpinner(false);
         handleReset();
     } catch (error) {

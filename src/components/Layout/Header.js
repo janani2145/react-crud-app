@@ -26,6 +26,9 @@ const Header = () => {
               <NavDropdown.Item as={NavLink} to="/reducerform" className='text-decoration-none'>
                 UseReducer
               </NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/contextform" className='text-decoration-none'>
+                UseContext
+              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

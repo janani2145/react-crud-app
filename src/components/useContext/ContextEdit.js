@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useUserContext } from './UserContext';
 import { useNavigate, useParams } from 'react-router-dom';
-import { fetchUserById, updateUser } from '../../Services/mockApis';
+import { useUserContext } from './Context';
+import { fetchUserById, updateUser } from '../Services/mockApis';
 import { fetchIdSuccess, updateSuccess } from './Action';
-import Spinner from '../../Spinner/Spinner';
+import Spinner from '../Spinner/Spinner';
 
 const ContextEdit = () => {
-    const { state, dispatch } = useUserContext();
+  const {state, dispatch} = useUserContext();
   const [fname, setFname] = useState('');
   const [lname, setLname] = useState('');
   const [dob, setDob] = useState('');
@@ -32,7 +32,7 @@ const ContextEdit = () => {
         fname, lname, dob, nation, gender, studentId, department, phone, email, address, zip
       });
       dispatch(updateSuccess(response));
-      nav("/reducertable");
+      nav("/context/table");
       setSpinner(false)
     } catch (error) {
       console.error('Error updating the user!', error);
@@ -62,6 +62,7 @@ const ContextEdit = () => {
         console.error('Error fetching user:', error);
       }
     };
+    
     getItem();
   }, [id]);
 
